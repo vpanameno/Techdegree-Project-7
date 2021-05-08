@@ -82,11 +82,11 @@ class App extends Component {
         <Nav/>
         <div className="photo-container">
         <Switch>
-          <Route exact path= "/" render={ () => <PhotoContainer data={this.state.photos}/>} />
-          <Route exact path= "/search/:query" render={ () => <PhotoContainer data={this.state.photos} title={this.state.tags}/>} />
+          <Route exact path= "/" render={ () => <PhotoContainer data={this.state.photos} title={this.state.tags}/>} />
+          <Route exact path= "/search/:query" render={ () => <PhotoContainer data={this.state.photos} title={this.state.tags} onSearch={this.searchResults}/> }/>
           <Route path= "/dogs" render={ () => <PhotoContainer data={this.state.dogPhotos} onClick={this.state.dogPhotos} title="dogs"/>} />
           <Route path= "/cats" render={ () => <PhotoContainer data={this.state.catPhotos} onClick={this.state.catPhotos} title="cats"/>} />
-          <Route path= "/computers" render={ () => <PhotoContainer data={this.state.computerPhotos} onClick={this.state.computerPhotos} title="computers"/>} />
+          <Route path= "/computers" render={ () => <PhotoContainer data={this.state.computerPhotos} onClick={this.state.computerPhotos} title="computers"/> } />
           <Route component={NotFound} />
         </Switch>
       </div>
