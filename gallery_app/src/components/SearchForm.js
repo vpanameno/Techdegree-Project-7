@@ -6,13 +6,13 @@ class SearchForm extends Component {
     state = {
         searchText: '',
     }
-
+//Function below changes the state based on user input
     onSearchChange = (e) => {
         this.setState({
             searchText: e.target.value
         });
     }
-
+//Function below handles the submission of user input: calls onSearch function and establishes route based on results
     submitSearch = (e) => {
         e.preventDefault();
         this.props.onSearch(this.query.value);

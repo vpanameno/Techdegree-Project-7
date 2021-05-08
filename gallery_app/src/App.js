@@ -16,7 +16,7 @@ class App extends Component {
         catPhotos: [],
         computerPhotos: [],
         tags: ''
-    };
+          };
   }
 
   componentDidMount() {
@@ -27,13 +27,14 @@ class App extends Component {
 
   }
 
-
+//Created the function needed to fetch information based on user input
   searchResults = (query = "lizards") => {
     fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(response => response.json())
       .then(responseData=> {
         this.setState({ photos: responseData.photos.photo,
-        tags: query })
+        tags: query
+      })
 
         })
     .catch(err=> {
@@ -41,7 +42,7 @@ class App extends Component {
       })
   }
 
-
+//Functions below are the links that were given, needed to fetch specific data based on title
 
   dogPics = () => {
     fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=dogs&per_page=24&format=json&nojsoncallback=1`)
@@ -71,8 +72,7 @@ class App extends Component {
   .catch(err=> console.log('Error fetching and parsing data', err))
 
 }
-
-
+//Below I rendered the components in the order they appeared on the page and passed appropriate data to be used in child components
   render() {
     return (
 
