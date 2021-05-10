@@ -3,14 +3,14 @@ import { withRouter } from 'react-router-dom';
 
 class SearchForm extends Component {
 
-    state = {
-        searchText: '',
+ state = {
+   searchText: '',
     }
 //Function below changes the state based on user input
-    onSearchChange = (e) => {
-        this.setState({
-            searchText: e.target.value
-        });
+  onSearchChange = (e) => {
+      this.setState({
+          searchText: e.target.value
+      });
     }
 //Function below handles the submission of user input: calls onSearch function and establishes route based on results
     submitSearch = (e) => {
